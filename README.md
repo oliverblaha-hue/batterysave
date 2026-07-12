@@ -1,57 +1,52 @@
 # batterysave
 
-`batterysave` is a small macOS menu bar app that watches your battery in the background and sends a notification when the battery drops below a percentage you choose.
+`batterysave` je malá macOS aplikace do horní lišty, která hlídá baterii a upozorní tě při dosažení nastaveného procenta.
 
-It shows only the `batterysave` logo in the menu bar, so it does not duplicate the built-in macOS battery indicator.
+## Funkce
 
-![batterysave logo](batterysave-logo.png)
+- běží jen v horní liště
+- průběžně kontroluje stav baterie
+- při vybíjení ukazuje odhad času do vybití
+- když macOS neposkytne odhad času, ukáže procenta baterie
+- při nabíjení nebo napájení ze zdroje ukazuje jen `-`
+- pošle oznámení jen ve chvíli, kdy baterie přesně dosáhne nastavené hodnoty
+- nastavení hranice přímo z menu v horní liště
+- výběr jazyka aplikace: English / Čeština
+- automatické spuštění po přihlášení
+- podpora Apple Silicon i Intel Maců
 
-## Features
+## Instalace
 
-- Custom battery alert threshold
-- macOS notifications
-- Menu bar logo only
-- Czech and English language choice during installation
-- Optional alerting only while the Mac is discharging
-- Starts automatically after login
-- Universal macOS build for Apple Silicon and Intel
+1. Otevři `batterysave-installer.dmg`.
+2. Spusť `install-batterysave.command`.
+3. Vyber jazyk aplikace.
+4. Nastav procento baterie pro upozornění.
+5. Pokud se macOS zeptá, povol oznámení.
 
-## Installation
+Instalátor zkopíruje aplikaci do `/Applications`, nastaví spuštění po přihlášení a odstraní starší verze `BaterkoHlidac` / `batterysave`, pokud jsou nainstalované.
 
-Recommended installation:
+## Použití
 
-1. Download `batterysave-installer.zip` or `batterysave-installer.dmg`.
-2. Open `install-batterysave.command`.
-3. Choose `Čeština` or `English`.
-4. Allow notifications when macOS asks.
-5. Click the `batterysave` logo in the menu bar and choose `Set threshold...`.
+Po instalaci se `batterysave` zobrazí v horní liště.
 
-The `.command` installer copies `batterysave.app` to `/Applications`, sets it to start after login, saves the selected language, and removes the older `BaterkoHlidac` version if it exists.
+V horní liště ukazuje:
 
-You can also install `batterysave.pkg`, but the `.command` installer is recommended because it lets you choose the language.
+- čas do vybití, například `2h 15m`
+- procenta baterie, pokud macOS neposkytne odhad času
+- `-`, pokud se Mac nabíjí nebo je připojený ke zdroji
 
-## Usage
+Kliknutím na položku v horní liště můžeš:
 
-After installation, `batterysave` appears in the macOS menu bar as a logo.
+- změnit procento pro upozornění
+- zapnout nebo vypnout upozornění jen při vybíjení
+- změnit jazyk aplikace
+- ukončit aplikaci
 
-Click the logo to:
+## Oznámení
 
-- change the alert threshold
-- test a notification
-- quit the app
+Oznámení přijde jen ve chvíli, kdy baterie při vybíjení přesně dosáhne nastavené hodnoty.
 
-The app keeps monitoring the battery in the background. When the battery drops below the selected threshold, macOS shows a notification.
+Příklad:
 
-## Build From Source
-
-Requirements:
-
-- macOS 12 or newer
-- Xcode command line tools
-- Swift compiler
-
-Build:
-
-```bash
-chmod +x build.sh
-./build.sh
+```text
+Stav baterie klesl na 25 %.
