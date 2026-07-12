@@ -23,8 +23,6 @@
 4. Nastav procento baterie pro upozornění.
 5. Pokud se macOS zeptá, povol oznámení.
 
-Instalátor zkopíruje aplikaci do `/Applications`, nastaví spuštění po přihlášení a odstraní starší verze `BaterkoHlidac` / `batterysave`, pokud jsou nainstalované.
-
 ## Použití
 
 Po instalaci se `batterysave` zobrazí v horní liště.
