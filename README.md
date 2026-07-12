@@ -30,7 +30,6 @@ Po instalaci se `batterysave` zobrazí v horní liště.
 V horní liště ukazuje:
 
 - čas do vybití, například `2h 15m`
-- procenta baterie, pokud macOS neposkytne odhad času
 - `-`, pokud se Mac nabíjí nebo je připojený ke zdroji
 
 Kliknutím na položku v horní liště můžeš:
